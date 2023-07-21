@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
 NEOVIM_STABLE_URL="https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz"
-PAQ_URL="https://github.com/savq/paq-nvim.git"
 
 if [ $USER != "root" ]; then
 	echo "Needs super-user privileges to install."
