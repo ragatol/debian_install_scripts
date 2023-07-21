@@ -14,7 +14,8 @@ if ! wget -O /tmp/neovim.tar.gz "$NEOVIM_STABLE_URL"; then
 	echo "Error while downloading latest version."
 	return 1
 fi
-# ok, remover arquivos da instalação anterior
+
+# remove old neovim installation
 rm /usr/bin/nvim
 rm -fr /usr/lib/nvim
 rm -fr /usr/share/nvim/
@@ -32,11 +33,11 @@ if ! cp -r /tmp/nvim-linux64/* /usr; then
 	return 1
 fi
 
-#ok, adicionar nvim como alternativa para editor e vi
+# add neovim as alternative to editor and vi
 update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 110
 update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 110
 
-# remover arquivos temporários
+# clean temporary files
 rm -fr /tmp/neovim.tar.gz
 rm -fr /tmp/nvim-linux64
 
