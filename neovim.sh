@@ -2,7 +2,6 @@
 
 NEOVIM_STABLE_URL="https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz"
 PAQ_URL="https://github.com/savq/paq-nvim.git"
-PAQ_INSTALL_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack/paqs/start/paq-nvim"
 
 if [ $USER != "root" ]; then
 	echo "Needs super-user privileges to install."
@@ -40,9 +39,4 @@ update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 110
 # clean temporary files
 rm -fr /tmp/neovim.tar.gz
 rm -fr /tmp/nvim-linux64
-
-# install paq if not installed
-if ! [ -d $PAQ_INSTALL_PATH ]; then
-	git clone --depth=1 $PAQ_URL $PAQ_INSTALL_PATH
-fi
 
