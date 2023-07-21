@@ -18,7 +18,7 @@ fi
 godot_exec="${GODOT_INSTALL_DIR}/godot"
 echo "Extracting to ${godot_exec}..."
 mkdir -p $GODOT_INSTALL_DIR
-7z x -o$GODOT_INSTALL_DIR $1
+unzip "$1" -d "$GODOT_INSTALL_DIR"
 cd $GODOT_INSTALL_DIR
 mv Godot* godot
 
