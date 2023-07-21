@@ -14,8 +14,13 @@ if ! wget -O /tmp/neovim.tar.gz "$NEOVIM_STABLE_URL"; then
 	echo "Error while downloading latest version."
 	return 1
 fi
-# ok, remover lib da instalação anterior
+# ok, remover arquivos da instalação anterior
+rm /usr/bin/nvim
 rm -fr /usr/lib/nvim
+rm -fr /usr/share/nvim/
+rm /usr/share/applications/nvim.desktop
+rm /usr/man/man1/nvim.1
+find /usr/locale -name "nvim.mo" -delete
 
 if ! tar -x -C /tmp -f /tmp/neovim.tar.gz; then
 	echo "Error while extracting downloaded archive."
