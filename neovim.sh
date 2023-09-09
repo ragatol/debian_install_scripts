@@ -19,7 +19,7 @@ rm -fr /usr/lib/nvim
 rm -fr /usr/share/nvim/
 rm /usr/share/applications/nvim.desktop
 rm /usr/man/man1/nvim.1
-find /usr/locale -name "nvim.mo" -delete
+find /usr/local -name "nvim.mo" -delete
 
 if ! tar -x -C /tmp -f /tmp/neovim.tar.gz; then
 	echo "Error while extracting downloaded archive."
