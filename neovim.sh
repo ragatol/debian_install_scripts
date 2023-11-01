@@ -31,4 +31,3 @@ update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 110
 
 # clean temporary files
 rm -fr /tmp/neovim.tar.gz
-
